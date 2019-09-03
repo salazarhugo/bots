@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const bot_name = "gervais";
+const bot_name = "epita";
 
 client.on("ready", () => {
     const channel = client.channels.get("557872267258757131");
