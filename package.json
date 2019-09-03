@@ -2,9 +2,9 @@
   "name": "Test",
   "description": "Test",
   "version": "0.0.0",
-  "main": "bonnel.js",
+  "main": "epita-bot.js",
   "scripts": {
-    "start": "node bonnel.js"
+    "start": "node epita-bot.js"
   },
   "dependencies": {
     "request": "2.81.0",
