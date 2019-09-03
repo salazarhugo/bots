@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-bot_secret_token = "NTU3ODg3MjU3MTQ3NjA0OTkz.D3O1SQ.uDAP_hj2t4BBTXmwMbG0j2OsHp4"
+bot_secret_token = "CuFhITgBwAwq5VrUJDOhq2YAIWcyg7k6"
 
 client.on("ready", () => {
     const channel = client.channels.get("557872267258757131");
