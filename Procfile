@@ -1,1 +1,1 @@
-worker: node bonnel.js
+worker: node epita-bot.js
