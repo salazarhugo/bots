@@ -40,7 +40,7 @@ client.on("ready", () => {
         const command = args.shift().toLowerCase();
         console.log(command);
         console.log(message.author);
-        message.author.client.guilds.members.addRole(message.guild.roles.find(r => r.name === command")).catch(console.error);
+        message.member.addRole(message.guild.roles.find(r => r.name === command")).catch(console.error);
     }
 
   });
