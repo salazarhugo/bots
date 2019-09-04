@@ -38,7 +38,7 @@ client.on("ready", () => {
         const args = message.content.slice(1).trim().split(/ +/g);
         const command = args.shift().toUpperCase();
         console.log(command);
-        if(command === "A1" || command === "A2" || command === "B1" || command === "B2" || command === "C1" || command === "C2" || command === "D1" || command === "D2" || command === "eng1" || command === "eng2" || command === "eng3") { 
+        if(command === "A1" || command === "A2" || command === "B1" || command === "B2" || command === "C1" || command === "C2" || command === "D1" || command === "D2" || command === "ENG1" || command === "ENG2" || command === "ENG3") { 
             message.member.addRole(message.guild.roles.find(r => r.name === command)).catch(console.error);
         } else if(command === "ADMIN") {
             message.channel.send("Nope bitch!");
