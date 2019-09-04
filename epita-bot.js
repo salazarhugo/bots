@@ -36,9 +36,9 @@ client.on("ready", () => {
     } else
     if(message.content.startsWith("!")) {
         const args = message.content.slice(1).trim().split(/ +/g);
-        const command = args.shift().toLowerCase();
+        const command = args.shift().toUpperCase();
         console.log(command);
-        console.log(message.author);
+        console.log(message.member.displayName);
         message.member.addRole(message.guild.roles.find(r => r.name === command)).catch(console.error);
     }
 
