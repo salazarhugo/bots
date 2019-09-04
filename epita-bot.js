@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const bot_name = "epita";
+let role = message.guild.roles.find(r => r.name === "Team Mystic");
+
 
 client.on("ready", () => {
     const channel = client.channels.get("557872267258757131");
@@ -36,14 +38,10 @@ client.on("ready", () => {
     if(message.content.startsWith("!")) {
         const args = message.content.slice(1).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
-
-        if(command === "say") {
-          const sayMessage = args.join(" ");
-          message.delete().catch(O_o=>{});
-          message.channel.send(sayMessage);
-        }
-}
-
+        console.log(command);
+        console.log(message.author);
+        message.author.addRole(message.guild.roles.find(r => r.name === command")).catch(console.error);
+    }
 
   });
 
