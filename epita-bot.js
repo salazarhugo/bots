@@ -1,7 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const bot_name = "epita";
-let role = message.guild.roles.find(r => r.name === "Team Mystic");
 
 
 client.on("ready", () => {
@@ -40,7 +39,7 @@ client.on("ready", () => {
         const command = args.shift().toLowerCase();
         console.log(command);
         console.log(message.author);
-        message.member.addRole(message.guild.roles.find(r => r.name === command")).catch(console.error);
+        message.member.addRole(message.guild.roles.find(r => r.name === command)).catch(console.error);
     }
 
   });
