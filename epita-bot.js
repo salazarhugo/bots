@@ -38,8 +38,9 @@ client.on("ready", () => {
         const args = message.content.slice(1).trim().split(/ +/g);
         const command = args.shift().toUpperCase();
         console.log(command);
-        console.log(message.member.displayName);
+        message.channel.send(message.member.displayName);
         message.member.addRole(message.guild.roles.find(r => r.name === command)).catch(console.error);
+        message.channel.send(console.error);
     }
 
   });
