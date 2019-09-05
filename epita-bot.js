@@ -62,6 +62,13 @@ client.on("ready", () => {
             
         } else if(command === "ADMIN") {
             message.channel.send("Nope bitch!");
+        } else if(command === "CLEAR") {
+             message.member.removeRoles(message.member.roles).then(() => {
+                    message.reply("Successfully removes roles");
+                }).catch(err => {
+                  console.error(err);
+                  message.channel.send(err);
+                });
         }
     }
 
