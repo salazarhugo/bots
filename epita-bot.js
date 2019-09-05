@@ -39,7 +39,7 @@ client.on("ready", () => {
         const command = args.shift().toUpperCase();
         console.log(command);
         if(command === "GAMER" || command === "A1" || command === "A2" || command === "B1" || command === "B2" || command === "C1" || command === "C2" || command === "D1" || command === "D2" || command === "ENG1" || command === "ENG2" || command === "ENG3") {
-            if(message.member.roles.has(command) {
+            if(message.member.roles.find(r => r.name === "Gamer")) {
                 message.channel.send(message.member.displayName + "already has this role");
                 return;
             }
@@ -48,7 +48,7 @@ client.on("ready", () => {
             } else {
                  message.member.addRole(message.guild.roles.find(r => r.name === command)).catch(console.error);
             }
-            if(message.member.roles.has(command) {
+            if(message.member.roles.find(r => r.name === command)) {
                message.channel.send("Role " + command + " added to " + message.member.displayName);
             } else {
                message.channel.send("Missing Permissions");
