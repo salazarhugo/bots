@@ -40,7 +40,7 @@ client.on("ready", () => {
        
         console.log(command);
         if(command === "GAMER" || command === "A1" || command === "A2" || command === "B1" || command === "B2" || command === "C1" || command === "C2" || command === "D1" || command === "D2" || command === "ENG1" || command === "ENG2" || command === "ENG3") {
-            if(message.member.roles.find(r => r.name === "Gamer")) {
+            if(message.member.roles.find(r => r.name === command)) {
                 message.channel.send(message.member.displayName + " already has this role");
                 return;
             }
