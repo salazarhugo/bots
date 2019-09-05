@@ -37,6 +37,7 @@ client.on("ready", () => {
     if(message.content.startsWith("!")) {
         const args = message.content.slice(1).trim().split(/ +/g);
         const command = args.shift().toUpperCase();
+       
         console.log(command);
         if(command === "GAMER" || command === "A1" || command === "A2" || command === "B1" || command === "B2" || command === "C1" || command === "C2" || command === "D1" || command === "D2" || command === "ENG1" || command === "ENG2" || command === "ENG3") {
             if(message.member.roles.find(r => r.name === "Gamer")) {
@@ -44,14 +45,19 @@ client.on("ready", () => {
                 return;
             }
             if(command === "GAMER") {
-                message.member.addRole(message.guild.roles.find(r => r.name === "Gamer")).catch(console.error);
+                message.member.addRole(message.guild.roles.find(r => r.name === "Gamer")).then(() => {
+                    message.reply("Successfully added role " + command " to " + message.member.displayName);
+                }).catch(err => {
+                  console.error(err);
+                  message.channel.send(err);
+                });
             } else {
-                 message.member.addRole(message.guild.roles.find(r => r.name === command)).catch(console.error);
-            }
-            if(message.member.roles.find(r => r.name === command)) {
-               message.channel.send("Role " + command + " added to " + message.member.displayName);
-            } else {
-               message.channel.send("Missing Permissions");
+                message.member.addRole(message.guild.roles.find(r => r.name === command)).then(() => {
+                    message.reply("Successfully added role " + command " to " + message.member.displayName);
+                }).catch(err => {
+                  console.error(err);
+                  message.channel.send(err);
+                });
             }
             
         } else if(command === "ADMIN") {
