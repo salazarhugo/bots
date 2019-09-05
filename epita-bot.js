@@ -46,14 +46,14 @@ client.on("ready", () => {
             }
             if(command === "GAMER") {
                 message.member.addRole(message.guild.roles.find(r => r.name === "Gamer")).then(() => {
-                    message.reply("Successfully added role " + command " to " + message.member.displayName);
+                    message.reply("Successfully added role " + command + " to " + message.member.displayName);
                 }).catch(err => {
                   console.error(err);
                   message.channel.send(err);
                 });
             } else {
                 message.member.addRole(message.guild.roles.find(r => r.name === command)).then(() => {
-                    message.reply("Successfully added role " + command " to " + message.member.displayName);
+                    message.reply("Successfully added role " + command + " to " + message.member.displayName);
                 }).catch(err => {
                   console.error(err);
                   message.channel.send(err);
