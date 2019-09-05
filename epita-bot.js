@@ -41,19 +41,19 @@ client.on("ready", () => {
         console.log(command);
         if(command === "GAMER" || command === "A1" || command === "A2" || command === "B1" || command === "B2" || command === "C1" || command === "C2" || command === "D1" || command === "D2" || command === "ENG1" || command === "ENG2" || command === "ENG3") {
             if(message.member.roles.find(r => r.name === command)) {
-                message.channel.send(message.member.displayName + " already has this role");
+                message.reply("You already have this role");
                 return;
             }
             if(command === "GAMER") {
                 message.member.addRole(message.guild.roles.find(r => r.name === "Gamer")).then(() => {
-                    message.reply("Successfully added role " + command + " to " + message.member.displayName);
+                    message.reply("Successfully added role " + command);
                 }).catch(err => {
                   console.error(err);
                   message.channel.send(err);
                 });
             } else {
                 message.member.addRole(message.guild.roles.find(r => r.name === command)).then(() => {
-                    message.reply("Successfully added role " + command + " to " + message.member.displayName);
+                    message.reply("Successfully added role " + command);
                 }).catch(err => {
                   console.error(err);
                   message.channel.send(err);
