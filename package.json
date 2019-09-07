@@ -28,6 +28,13 @@
     "weather-js": "^2.0.0",
     "youtube-search": "^1.1.0",
     "ytdl": "^0.10.1",
-    "ytdl-core": "github:fent/node-ytdl-core"
+    "ytdl-core": "github:fent/node-ytdl-core",
+    "flatiron": "~0.3.8",
+    "nodemon": "~0.7.10",
+    "union": "~0.3.7",
+    "webshot": "~0.5.1",
+    "express": "3.4.3",
+    "temp": "0.6.0",
+    "ejs": "*"
   }
 }
