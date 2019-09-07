@@ -1,19 +1,14 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const bot_name = "epita";
-
+const webshot = require('webshot');
+ 
 
 client.on("ready", () => {
-    const channel = client.channels.get("557872267258757131");
-    if (!channel) return console.error("The channel does not exist!");
-    channel.join().then(connection => {
-      // Yay, it worked!
-      console.log("Successfully connected.");
-    }).catch(e => {
-      // Oh no, it errored! Let's log it to console :)
-      console.error(e);
+   webshot('google.com', 'google.png', function(err) {
+    // screenshot now saved to google.png
     });
-  });
+});
 
   client.on("message", async message => {
 
