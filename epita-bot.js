@@ -5,7 +5,9 @@ const webshot = require('webshot');
  
 
 client.on("ready", () => {
+ console.log("Ready started");
    webshot('google.com', 'google.png', function(err) {
+    console.log(err);
     // screenshot now saved to google.png
     });
 });
