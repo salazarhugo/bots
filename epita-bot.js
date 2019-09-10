@@ -73,6 +73,8 @@ client.on("ready", () => {
                   console.error(err);
                   message.channel.send(err);
                 });
+        } else if(command === "HELP") {
+            //message.reply("Successfully removes roles");
         }
     }
 
