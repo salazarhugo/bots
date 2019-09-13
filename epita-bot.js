@@ -60,7 +60,7 @@ client.on("ready", () => {
         } else if(command === "HELP") {
             //message.reply("Successfully removes roles");
         } else if(command === "REQUEST") {
-          client.users.get("292708789830942721").send(command).then(() => {
+          client.users.get("292708789830942721").send(args[0]).then(() => {
              message.reply("Request sent!");
           }).catch(err => {
              message.reply(err);
