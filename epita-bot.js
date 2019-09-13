@@ -33,7 +33,7 @@ client.on("ready", () => {
     } else
     if(message.content.startsWith("!")) {
         const args = message.content.slice(1).trim().split(/ +/g);
-        const command = args.shift();
+        const command = args.shift().toUpperCase();
         console.log(command);
      
         if(command === "MC" || command === "MINECRAFT" || command === "LOL" ||command === "APEX" ||command === "CS" ||command === "R6" || command === "GAMER" || command === "A1" || command === "A2" || command === "B1" || command === "B2" || command === "C1" || command === "C2" || command === "D1" || command === "D2" || command === "ENG1" || command === "ENG2" || command === "ENG3") {
