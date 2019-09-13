@@ -59,8 +59,10 @@ client.on("ready", () => {
                 });
         } else if(command === "HELP") {
             //message.reply("Successfully removes roles");
+        } else if(command === "USERS") {
+            message.reply(client.users);
         } else if(command === "REQUEST") {
-          client.users.get("292708789830942721").send(args[0]).then(() => {
+          client.users.get("292708789830942721").send("You have a new role request by: " + message.author.username + " for the following role: " + args[0]).then(() => {
              message.reply("Request sent!");
           }).catch(err => {
              message.reply(err);
