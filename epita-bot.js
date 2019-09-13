@@ -42,7 +42,7 @@ client.on("ready", () => {
         }
 
         message.member.addRole(message.guild.roles.find(r => r.name.toLowerCase() === command.toLowerCase())).then(() => {
-            message.reply("Successfully added role " + r);
+            message.reply("Successfully added role " );
         }).catch(err => {
           console.error(err);
           message.channel.send(err);
