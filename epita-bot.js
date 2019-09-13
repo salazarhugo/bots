@@ -60,7 +60,7 @@ client.on("ready", () => {
         } else if(command === "HELP") {
             //message.reply("Successfully removes roles");
         } else if(command === "REQUEST") {
-         //message.author.send
+          message.guild.members.get("id", "292708789830942721").send(command);
         } else if(command === "ID") {
           message.reply(message.author.id);
         } else {
