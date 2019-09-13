@@ -57,7 +57,7 @@ client.on("ready", () => {
                 });
             } else if(command === "MC" || command === "MINECRAFT") {
                 message.member.addRole(message.guild.roles.find(r => r.name === "Minecraft")).then(() => {
-                    message.reply("Successfully added role " + command);
+                    message.reply("Successfully added role MINECRAFT");
                 }).catch(err => {
                   console.error(err);
                   message.channel.send(err);
