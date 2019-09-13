@@ -61,8 +61,8 @@ client.on("ready", () => {
             //message.reply("Successfully removes roles");
         } else if(command === "REQUEST") {
          //message.author.send
-        } else if(command === "CLIENT") {
-          message.reply(message.author.client);
+        } else if(command === "ID") {
+          message.reply(message.author.id);
         } else {
             message.member.addRole(message.guild.roles.find(r => r.name.toLowerCase() === command.toLowerCase())).then(() => {
             message.reply("Successfully added role " + command );
