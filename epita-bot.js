@@ -42,10 +42,10 @@ client.on("ready", () => {
         }
 
         message.member.addRole(message.guild.roles.find(r => r.name.toLowerCase() === command.toLowerCase())).then(() => {
-            message.reply("Successfully added role " );
+            message.reply("Successfully added role " + command );
         }).catch(err => {
           console.error(err);
-          message.reply(err);
+          message.reply("TypeError: Supplied parameter was neither a Role nor a Snowflake.");
         });
             
         if(command === "ADMIN") {
