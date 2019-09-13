@@ -33,43 +33,21 @@ client.on("ready", () => {
     } else
     if(message.content.startsWith("!")) {
         const args = message.content.slice(1).trim().split(/ +/g);
-        const command = args.shift().toUpperCase();
-       
+        const command = args.shift();
         console.log(command);
+     
         if(command === "MC" || command === "MINECRAFT" || command === "LOL" ||command === "APEX" ||command === "CS" ||command === "R6" || command === "GAMER" || command === "A1" || command === "A2" || command === "B1" || command === "B2" || command === "C1" || command === "C2" || command === "D1" || command === "D2" || command === "ENG1" || command === "ENG2" || command === "ENG3") {
-            if(message.member.roles.find(r => r.name === command)) {
+            if(message.member.roles.find(r => r.name.toLowerCase() === command.toLowerCase())) {
                 message.reply("You already have this role");
                 return;
             }
-            if(command === "GAMER") {
-                message.member.addRole(message.guild.roles.find(r => r.name === "Gamer")).then(() => {
-                    message.reply("Successfully added role " + command);
-                }).catch(err => {
-                  console.error(err);
-                  message.channel.send(err);
-                });
-            } else if(command === "APEX") {
-                message.member.addRole(message.guild.roles.find(r => r.name === "Apex")).then(() => {
-                    message.reply("Successfully added role " + command);
-                }).catch(err => {
-                  console.error(err);
-                  message.channel.send(err);
-                });
-            } else if(command === "MC" || command === "MINECRAFT") {
-                message.member.addRole(message.guild.roles.find(r => r.name === "Minecraft")).then(() => {
-                    message.reply("Successfully added role MINECRAFT");
-                }).catch(err => {
-                  console.error(err);
-                  message.channel.send(err);
-                });
-            } else {
-                message.member.addRole(message.guild.roles.find(r => r.name === command)).then(() => {
-                    message.reply("Successfully added role " + command);
-                }).catch(err => {
-                  console.error(err);
-                  message.channel.send(err);
-                });
-            }
+         
+            message.member.addRole(message.guild.roles.find(r => r.name.toLowerCase() === command.toLowerCase())).then(() => {
+                message.reply("Successfully added role " + r);
+            }).catch(err => {
+              console.error(err);
+              message.channel.send(err);
+            });
             
         } else if(command === "ADMIN") {
             message.channel.send("Nope bitch!");
@@ -82,6 +60,9 @@ client.on("ready", () => {
                 });
         } else if(command === "HELP") {
             //message.reply("Successfully removes roles");
+        } else if(command === "REQUEST") {
+        } else {
+            //message.reply("This command doesn't exist. !request <role> to request a new command");
         }
     }
 
