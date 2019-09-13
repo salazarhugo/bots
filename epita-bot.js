@@ -33,22 +33,22 @@ client.on("ready", () => {
     } else
     if(message.content.startsWith("!")) {
         const args = message.content.slice(1).trim().split(/ +/g);
-        const command = args.shift();
+        const command = args.shift().toUpperCase();
         console.log(command);
      
         if(message.member.roles.find(r => r.name.toLowerCase() === command.toLowerCase())) {
             message.reply("You already have this role");
             return;
         }
-
-        message.member.addRole(message.guild.roles.find(r => r.name.toLowerCase() === command.toLowerCase())).then(() => {
+     
+        if(command === "MC") {
+            message.member.addRole(message.guild.roles.find(r => r.name.toLowerCase() === "minecraft")).then(() => {
             message.reply("Successfully added role " + command );
-        }).catch(err => {
-          console.error(err);
-          message.reply("TypeError: Supplied parameter was neither a Role nor a Snowflake.");
-        });
-            
-        if(command === "ADMIN") {
+            }).catch(err => {
+              console.error(err);
+              message.reply("TypeError: Supplied parameter was neither a Role nor a Snowflake.");
+            });
+        } else if(command === "ADMIN") {
             message.channel.send("Nope bitch!");
         } else if(command === "CLEAR") {
              message.member.removeRoles(message.member.roles).then(() => {
@@ -61,7 +61,12 @@ client.on("ready", () => {
             //message.reply("Successfully removes roles");
         } else if(command === "REQUEST") {
         } else {
-            //message.reply("This command doesn't exist. !request <role> to request a new command");
+            message.member.addRole(message.guild.roles.find(r => r.name.toLowerCase() === command.toLowerCase())).then(() => {
+            message.reply("Successfully added role " + command );
+            }).catch(err => {
+              console.error(err);
+              message.reply("TypeError: Supplied parameter was neither a Role nor a Snowflake.");
+            });
         }
     }
 
