@@ -45,7 +45,7 @@ client.on("ready", () => {
             message.reply("Successfully added role " );
         }).catch(err => {
           console.error(err);
-          message.channel.send(err);
+          message.reply(err);
         });
             
         if(command === "ADMIN") {
