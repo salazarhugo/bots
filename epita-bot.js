@@ -62,7 +62,7 @@ client.on("ready", () => {
         } else if(command === "REQUEST") {
          //message.author.send
         } else if(command === "CLIENT") {
-          message.reply(message.author);
+          message.reply(message.author.client);
         } else {
             message.member.addRole(message.guild.roles.find(r => r.name.toLowerCase() === command.toLowerCase())).then(() => {
             message.reply("Successfully added role " + command );
