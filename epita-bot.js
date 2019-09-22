@@ -75,7 +75,7 @@ client.on("ready", () => {
             message.reply("Successfully added role " + command );
             }).catch(err => {
               console.error(err);
-              message.reply("TypeError: Supplied parameter was neither a Role nor a Snowflake. You can request a new role with !request <role>");
+              //message.reply("TypeError: Supplied parameter was neither a Role nor a Snowflake. You can request a new role with !request <role>");
             });
         }
     }
